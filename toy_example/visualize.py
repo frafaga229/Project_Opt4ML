@@ -156,7 +156,7 @@ def toy_example(epochs_, gamma_, eta_):
     # b_diff = [t - s for t, s in zip(sn.b_h, sn.b_h[1:])]
     # plt.plot(w_diff, 'b--')
     # plt.plot(b_diff, 'g--')
-    plt.title("Variation of Parameters and Error in Momentum")
+    plt.title("Gradient history of Momentum method")
     plt.show()
 
     nag = NAG(w_init, b_init)
@@ -170,7 +170,7 @@ def toy_example(epochs_, gamma_, eta_):
     # b_diff = [t - s for t, s in zip(sn.b_h, sn.b_h[1:])]
     # plt.plot(w_diff, 'b--')
     # plt.plot(b_diff, 'g--')
-    plt.title("Variation of Parameters and Error in NAG")
+    plt.title("Gradient history of Nesterov's Accelerated Gradient")
     plt.show()
 
     fig = plt.figure(figsize=(40, 20))
