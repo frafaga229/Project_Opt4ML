@@ -57,6 +57,7 @@ def visualize_3d(neuron_class1, neuron_class2, fig):
                        np.asarray(neuron_class2.bias_h[:i + 1]),
                        np.asarray(neuron_class2.error_h[:i + 1]), color='orange', marker='o', linewidth=2, markersize=3, label="NAG"
                        )
+    ax1.legend(facecolor='white', frameon=True)
     title = fig.suptitle('Epoch 0')
     return line11, line12, title
 
@@ -117,7 +118,6 @@ def visualize_2d(neuron_class1, neuron_class2, fig):
         neuron_class1.bias_h[:i + 1],
         color='lightgreen', marker='o', linewidth=2, markersize=3, label='Momentum'
     )
-    ax2.legend(facecolor='white', frameon=True)
     line22, = ax2.plot(
         neuron_class2.weight_h[:i + 1],
         neuron_class2.bias_h[:i + 1],
@@ -132,7 +132,7 @@ def start_update_visualization(fig, neuron_class1, neuron_class2, line11, line12
         fig, func=updateALL, frames=animation_frames, repeat=False, fargs=(
             neuron_class1, neuron_class2, line11, line12, line21, line22, title
         ))
-    rc('animation', html='jshtml')
+    # rc('animation', html='jshtml')
     plt.show()
 
 
