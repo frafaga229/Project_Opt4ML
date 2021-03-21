@@ -21,6 +21,7 @@ class SGDNetwork(NNetwork):
             Y_pred = self.predict(X)
             self.loss[num_epoch] = log_loss(np.argmax(Y, axis=1), Y_pred)
             Y_pred_train = np.argmax(Y_pred, 1)
-            self.acc[num_epoch] = accuracy_score(Y_pred_train, np.argmax(Y, axis=1))
+            self.acc[num_epoch] = accuracy_score(
+                Y_pred_train, np.argmax(Y, axis=1))
             print("Epoch {}: Train loss : {}  -  Train accuracy : {}".format(num_epoch,
-                                                                           round(self.loss[num_epoch], 3), round(self.acc[num_epoch], 3)))
+                                                                             round(self.loss[num_epoch], 3), round(self.acc[num_epoch], 3)))

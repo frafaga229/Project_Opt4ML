@@ -10,6 +10,7 @@ from .visualize import visualize_nn
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.datasets import make_blobs
 
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -56,4 +57,5 @@ if __name__ == '__main__':
     W1 = np.random.randn(2, 2)
     W2 = np.random.randn(2, 4)
 
-    visualize_nn(W1, W2, X_train, y_OH_train, args.epochs, args.gamma, args.eta)
+    visualize_nn(W1, W2, X_train, y_OH_train,
+                 args.epochs, args.gamma, args.eta)
