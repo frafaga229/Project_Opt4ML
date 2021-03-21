@@ -51,7 +51,6 @@ class NNetwork:
             params = self.params
 
         self.forward_pass(X, params)
-        m = X.shape[0]
         self.gradients["dA2"] = self.H2 - Y  # (N, 4) - (N, 4) -> (N, 4)
         self.gradients["dW2"] = np.matmul(
             self.H1.T, self.gradients["dA2"])  # (2, N) * (N, 4) -> (2, 4)

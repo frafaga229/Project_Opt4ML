@@ -11,7 +11,7 @@
 #### Step 3:  Run visualization with Toy data example
 
 ```shellscript
-python -m toy_example --epochs=<number of epochs> --gamma=<value of gamma> --eta=<value of eta>
+python -m toy_example --epochs=100 --gamma=0.9 --eta=1
 ```
 **Parameters**
 -  ```epochs``` is parameters of Number of Epochs
@@ -26,7 +26,7 @@ Plots includes:
 #### Step 4:  Run visualization with Neuron network example
 
 ```shellscript
-python -m nn_example --epochs=<number of epochs> --gamma=<value of gamma> --eta=<value of eta>
+python -m nn_example --epochs=40 --gamma=0.9 --eta=1
 ```
 **Parameters**
 -  ```epochs``` is parameters of Number of Epochs

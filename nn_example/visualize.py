@@ -24,10 +24,10 @@ def visualize_nn(W1, W2, X_train, y_OH_train, epochs, gamma, eta):
              markersize=5, label='SGD - loss')
     plt.plot(model_moment.loss.values(), '-x',
              markersize=5, label='Momentum - loss')
-    plt.legend()
     plt.plot(model_nag.loss.values(), '-o',
              markersize=5, label='NAG - loss')
     plt.legend()
+    plt.title("Comparing Loss of 3 method SGD, Momentum and NAG")
     plt.xlabel('Epochs')
     plt.ylabel('Loss values')
     plt.show()
@@ -38,9 +38,9 @@ def visualize_nn(W1, W2, X_train, y_OH_train, epochs, gamma, eta):
              markersize=5, label='SGD - acc')
     plt.plot(model_moment.acc.values(), '-x',
              markersize=5, label='Momentum - acc')
-    plt.legend()
     plt.plot(model_nag.acc.values(), '-o',
              markersize=5, label='NAG - acc')
+    plt.title("Comparing Accuracy of 3 method SGD, Momentum and NAG")
     plt.legend()
     plt.xlabel('Epochs')
     plt.ylabel('Accuracy')
