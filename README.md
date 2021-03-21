@@ -68,10 +68,10 @@ python -m nn_example --epochs=40 --gamma=0.9 --eta=1
 
 ### Toy data example approach 2
 **Visualization on learning sigmoid parameters process  of Momentum method and Nesterov's Accelerated Gradient**
-<img src="https://github.com/frafaga229/Project_Opt4ML/blob/main/img/toy_example.png" width="1000"><br>
+<img src="https://github.com/frafaga229/Project_Opt4ML/blob/main/results/toy_example.png" width="1000"><br>
 
 ### Neuron Network example
  **Loss values on 3 methods SGD, Momentum, Nesterov's Accelerated Gradient**
-<img src="https://github.com/frafaga229/Project_Opt4ML/blob/main/img/nn_loss.png" width="900"><br>
+<img src="https://github.com/frafaga229/Project_Opt4ML/blob/main/results/nn_loss.png" width="900"><br>
 **Accuracy values on 3 methods SGD, Momentum, Nesterov's Accelerated Gradient**
-<img src="https://github.com/frafaga229/Project_Opt4ML/blob/main/img/nn_acc.png" width="900"><br>
+<img src="https://github.com/frafaga229/Project_Opt4ML/blob/main/results/nn_acc.png" width="900"><br>
