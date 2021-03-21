@@ -23,7 +23,7 @@ epochs = 200
 gamma = 0.9
 eta = 0.8
 eps = 1e-8
-animation_frames = 60
+animation_frames = 40
 
 
 def visualize_3d(neuron_class1, neuron_class2, fig):
@@ -61,9 +61,8 @@ def visualize_3d(neuron_class1, neuron_class2, fig):
     return line11, line12, title
 
 
-def plot_animate_3d(i, neuron_class1, neuron_class2, line11, line12, title):
-    i = int(i * (epochs / animation_frames))
-
+def plot_animate_3d(j, neuron_class1, neuron_class2, line11, line12, title):
+    i = int(j * (epochs / animation_frames))
     line11.set_data(np.asarray(
         neuron_class1.weight_h[:i + 1]), np.asarray(neuron_class1.bias_h[:i + 1])
     )
@@ -80,8 +79,8 @@ def plot_animate_3d(i, neuron_class1, neuron_class2, line11, line12, title):
     return line11, line12, title
 
 
-def plot_animate_2d(i, neuron_class1, neuron_class2, line21, line22, title):
-    i = int(i * (epochs / animation_frames))
+def plot_animate_2d(k, neuron_class1, neuron_class2, line21, line22, title):
+    i = int(k * (epochs / animation_frames))
     line21.set_data(
         neuron_class1.weight_h[:i + 1], neuron_class1.bias_h[:i + 1]
     )
@@ -138,6 +137,7 @@ def start_update_visualization(fig, neuron_class1, neuron_class2, line11, line12
 
 
 def toy_example(epochs_, gamma_, eta_):
+    global epochs, gamma, eta
     epochs = epochs_
     gamma = gamma_
     eta = eta_
