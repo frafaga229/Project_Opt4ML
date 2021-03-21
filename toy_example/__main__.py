@@ -2,13 +2,11 @@
 # coding: utf-8
 
 from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.pyplot as plt
 import argparse
-from matplotlib import cm
-import matplotlib.colors
 from .visualize import toy_example
 
 
+# This function to read agruments from command line
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -31,4 +29,5 @@ def parse_args():
 
 if __name__ == '__main__':
     args = parse_args()
+    # Run toy example with 3 arguments epochs, gamma, eta
     toy_example(args.epochs, args.gamma, args.eta)

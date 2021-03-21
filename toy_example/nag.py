@@ -1,7 +1,7 @@
 
 from .sigmoid_neuron import SN
 
-
+# Class NAG inherited from SN class
 class NAG(SN):
 
     def __init__(self, weight_init, bias_init):
@@ -11,6 +11,9 @@ class NAG(SN):
         self.bias_h = []
         self.error_h = []
 
+    # Fit function is to learn and update parameter ffrom data input
+    # gamma is momentum we put to input
+    # eta is same with learning rate
     def fit(self, X, Y,
             epochs=100, eta=0.01, gamma=0.9, mini_batch_size=100, eps=1e-8,
             beta=0.9, beta1=0.9, beta2=0.9):

@@ -6,18 +6,19 @@ import matplotlib.pyplot as plt
 
 def visualize_nn(W1, W2, X_train, y_OH_train, epochs, gamma, eta):
 
+    # Create model neuron network with method SGD without momentum
     model_sgd = SGDNetwork(W1, W2)
     model_sgd.fit(X_train, y_OH_train, epochs=epochs, eta=eta,
                   algo="Momentum", gamma=gamma, display_loss=True)
-
+    # Create model neuron network with momentum method
     model_moment = MomentumNetwork(W1, W2)
     model_moment.fit(X_train, y_OH_train, epochs=epochs, eta=eta,
                      algo="Momentum", gamma=gamma, display_loss=True)
-
+    # Create model neuron network with Nesterov's accelerated gradient method
     model_nag = NAGNetwork(W1, W2)
     model_nag.fit(X_train, y_OH_train, epochs=epochs, eta=eta,
                   algo="Momentum", gamma=gamma, display_loss=True)
-
+    # Plot from loss values of 3 models
     plt.figure(figsize=(10, 5))
     plt.grid(True)
     plt.plot(model_sgd.loss.values(), '-v',

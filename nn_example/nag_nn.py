@@ -4,6 +4,7 @@ import numpy as np
 
 
 class NAGNetwork(NNetwork):
+    # Create fit funtion based on algorithm of Nesterov's Accelerated Gradient
     def fit(self, X, Y, epochs=1, algo="GD", display_loss=False,
             eta=1, mini_batch_size=100, eps=1e-8,
             beta=0.9, beta1=0.9, beta2=0.9, gamma=0.9):
@@ -32,7 +33,7 @@ class NAGNetwork(NNetwork):
                 self.params["B" + str(i)] -= eta * \
                     (self.update_params["v_b" + str(i)])
             self.prev_update_params = self.update_params
-
+            # Print loss and accurancy for each epoch
             Y_pred = self.predict(X)
             self.loss[num_epoch] = log_loss(np.argmax(Y, axis=1), Y_pred)
             Y_pred_train = np.argmax(Y_pred, 1)
