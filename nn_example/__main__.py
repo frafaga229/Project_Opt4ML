@@ -10,7 +10,7 @@ from .visualize import visualize_nn
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.datasets import make_blobs
 
-
+# This function to read agruments from command line
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -43,12 +43,12 @@ if __name__ == '__main__':
     plt.scatter(data[:, 0], data[:, 1], c=labels, cmap=my_cmap)
     plt.title("Example data for classification (4 labels)")
     plt.show()
-
+    # Split data to train and validation data
     X_train, X_val, Y_train, Y_val = train_test_split(
         data, labels, stratify=labels, random_state=0
     )
     print(X_train.shape, X_val.shape, labels.shape)
-
+    # I use OneHotEncoder to encode target label
     enc = OneHotEncoder()
     # 0 -> (1, 0, 0, 0), 1 -> (0, 1, 0, 0), 2 -> (0, 0, 1, 0), 3 -> (0, 0, 0, 1)
     y_OH_train = enc.fit_transform(np.expand_dims(Y_train, 1)).toarray()

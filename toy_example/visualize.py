@@ -1,7 +1,6 @@
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 from matplotlib import cm
-import matplotlib.colors
 
 from matplotlib import animation, rc
 # from IPython.display import HTML
@@ -10,15 +9,14 @@ import numpy as np
 from .momentum import Momentum
 from .nag import NAG
 
-
-X = np.asarray([3.5, 0.35, 3.2, -2.0, 1.5, -0.5, -0.25])
-Y = np.asarray([0.5, 0.52, 0.56, 0.51, 0.12, 0.35, 0.75])
+# Cerate some constant values
 w_init = -6
 b_init = 5
 w_min = -7
 w_max = 5
 b_min = -7
 b_max = 5
+# this parameters will be replaced when we call function
 epochs = 200
 gamma = 0.9
 eta = 0.8
@@ -61,7 +59,7 @@ def visualize_3d(neuron_class1, neuron_class2, fig):
     title = fig.suptitle('Epoch 0')
     return line11, line12, title
 
-
+# This function to update draw line on 3d graph
 def plot_animate_3d(j, neuron_class1, neuron_class2, line11, line12, title):
     i = int(j * (epochs / animation_frames))
     line11.set_data(np.asarray(
@@ -80,6 +78,7 @@ def plot_animate_3d(j, neuron_class1, neuron_class2, line11, line12, title):
     return line11, line12, title
 
 
+# This function to update draw line on 2d graph
 def plot_animate_2d(k, neuron_class1, neuron_class2, line21, line22, title):
     i = int(k * (epochs / animation_frames))
     line21.set_data(
@@ -92,7 +91,7 @@ def plot_animate_2d(k, neuron_class1, neuron_class2, line21, line22, title):
         i, neuron_class1.error_h[i], neuron_class2.error_h[i]))
     return line21, line22, title
 
-
+# This function to update 2d and 3d graph on the same time
 def updateALL(i, neuron_class1, neuron_class2, line11, line12, line21, line22, title):
     a = plot_animate_3d(i, neuron_class1, neuron_class2, line11, line12, title)
     b = plot_animate_2d(i, neuron_class1, neuron_class2, line21, line22, title)
@@ -144,32 +143,29 @@ def toy_example(epochs_, gamma_, eta_):
 
     print("X : ", X)
     print("Y : ", Y)
-
+    # Create Momentum model
     momentum = Momentum(w_init, b_init)
     plt.style.use("seaborn")
+    # fit Momentum model with X and Y data
     momentum.fit(X, Y, epochs=epochs, eta=eta, gamma=gamma)
+    # plot 3 list parameters on model
     plt.plot(momentum.error_h, 'r')
     plt.plot(momentum.weight_h, 'b')
     plt.plot(momentum.bias_h, 'g')
     plt.legend(["Error", "Weight", "Bias"], frameon=True, prop={'size': 18})
-    # w_diff = [t - s for t, s in zip(sn.w_h, sn.w_h[1:])]
-    # b_diff = [t - s for t, s in zip(sn.b_h, sn.b_h[1:])]
-    # plt.plot(w_diff, 'b--')
-    # plt.plot(b_diff, 'g--')
+
     plt.title("Gradient history of Momentum method")
     plt.show()
-
+    # Create NAG model
     nag = NAG(w_init, b_init)
     plt.style.use("seaborn")
+    # fit NAG model with X and Y data
     nag.fit(X, Y, epochs=epochs, eta=eta, gamma=gamma)
+    # plot 3 list parameters on model
     plt.plot(nag.error_h, 'r')
     plt.plot(nag.weight_h, 'b')
     plt.plot(nag.bias_h, 'g')
     plt.legend(["Error", "Weight", "Bias"], frameon=True, prop={'size': 18})
-    # w_diff = [t - s for t, s in zip(sn.w_h, sn.w_h[1:])]
-    # b_diff = [t - s for t, s in zip(sn.b_h, sn.b_h[1:])]
-    # plt.plot(w_diff, 'b--')
-    # plt.plot(b_diff, 'g--')
     plt.title("Gradient history of Nesterov's Accelerated Gradient")
     plt.show()
 
