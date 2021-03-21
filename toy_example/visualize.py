@@ -57,7 +57,7 @@ def visualize_3d(neuron_class1, neuron_class2, fig):
                        np.asarray(neuron_class2.bias_h[:i + 1]),
                        np.asarray(neuron_class2.error_h[:i + 1]), color='orange', marker='o', linewidth=2, markersize=3, label="NAG"
                        )
-    ax1.legend(facecolor='white', frameon=True)
+    ax1.legend(facecolor='white', frameon=True, prop={'size': 18})
     title = fig.suptitle('Epoch 0')
     return line11, line12, title
 
@@ -123,7 +123,7 @@ def visualize_2d(neuron_class1, neuron_class2, fig):
         neuron_class2.bias_h[:i + 1],
         color='orange', marker='o', linewidth=2, markersize=3, label="NAG"
     )
-    ax2.legend(facecolor='white', frameon=True)
+    ax2.legend(facecolor='white', frameon=True, prop={'size': 18})
     return line21, line22, title
 
 
@@ -151,7 +151,7 @@ def toy_example(epochs_, gamma_, eta_):
     plt.plot(momentum.error_h, 'r')
     plt.plot(momentum.weight_h, 'b')
     plt.plot(momentum.bias_h, 'g')
-    plt.legend(["Error", "Weight", "Bias"], frameon=True)
+    plt.legend(["Error", "Weight", "Bias"], frameon=True, prop={'size': 18})
     # w_diff = [t - s for t, s in zip(sn.w_h, sn.w_h[1:])]
     # b_diff = [t - s for t, s in zip(sn.b_h, sn.b_h[1:])]
     # plt.plot(w_diff, 'b--')
@@ -165,7 +165,7 @@ def toy_example(epochs_, gamma_, eta_):
     plt.plot(nag.error_h, 'r')
     plt.plot(nag.weight_h, 'b')
     plt.plot(nag.bias_h, 'g')
-    plt.legend(["Error", "Weight", "Bias"], frameon=True)
+    plt.legend(["Error", "Weight", "Bias"], frameon=True, prop={'size': 18})
     # w_diff = [t - s for t, s in zip(sn.w_h, sn.w_h[1:])]
     # b_diff = [t - s for t, s in zip(sn.b_h, sn.b_h[1:])]
     # plt.plot(w_diff, 'b--')
