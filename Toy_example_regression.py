@@ -218,26 +218,27 @@ def get_random_batch(x, y, batch_size):
 
 # Plot function
 def plot_all_results(model_name, grad, abvalue, loss, velocity = None):
-    plt.figure(figsize = [20, 6])
+    plt.figure(figsize = [16, 6])
     plt.subplot(141)
     plt.plot(abvalue[:,0])
-    plt.title('"a" values'); plt.xlabel("# Steps")
+    plt.title('"a" values', fontsize=12); plt.xlabel("# Steps")
     plt.ylabel('a')
     plt.subplot(142)
     plt.plot(abvalue[:,1])
-    plt.title('"b" values'); plt.xlabel("# Steps")
+    plt.title('"b" values', fontsize=12); plt.xlabel("# Steps")
     plt.ylabel('b')
     plt.subplot(143)
     plt.plot(loss)
-    plt.title("Loss"); plt.xlabel("# Steps")
+    plt.title("Loss", fontsize=12); plt.xlabel("# Steps")
     plt.ylabel('loss')
     if velocity is not None:
         plt.subplot(144)
         plt.plot(velocity[:, 0])
         plt.plot(velocity[:, 1], 'r*')
+        plt.title('Velocity'); plt.xlabel("# Steps")
+        plt.ylabel('velocity')
         plt.legend(['Velocity of grad_a', 'Velocity of grad_b'])
-    plt.suptitle('Results on '+model_name+': value updates and Loss') # or plt.suptitle('Main title')
-    
+    plt.suptitle('Results on '+model_name+': value updates and Loss', fontsize=15)
     plt.savefig('results/{}.png'.format(model_name))
     plt.show()
 
