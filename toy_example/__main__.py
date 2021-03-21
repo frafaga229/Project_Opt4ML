@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import argparse
 from matplotlib import cm
 import matplotlib.colors
-from .toy_example import toy_example
+from .visualize import toy_example
 
 
 def parse_args():
