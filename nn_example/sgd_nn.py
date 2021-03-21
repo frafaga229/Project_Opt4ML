@@ -4,6 +4,7 @@ import numpy as np
 
 
 class SGDNetwork(NNetwork):
+    # Create fit funtion based on algorithm of SGD
     def fit(self, X, Y, epochs=1, algo="GD", display_loss=False,
             eta=1, mini_batch_size=100, eps=1e-8,
             beta=0.9, beta1=0.9, beta2=0.9, gamma=0.9):

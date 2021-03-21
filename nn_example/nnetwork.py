@@ -1,15 +1,15 @@
 
 import numpy as np
 
-## I cearte a class with 2 basic layer network
+# I cearte a class with 2 basic layer network
 class NNetwork:
 
     def __init__(self, W1, W2):
         self.params = {}
-        self.params["W1"] = W1.copy() # weight of layer 1
-        self.params["W2"] = W2.copy() # weight of layer 1
-        self.params["B1"] = np.zeros((1, 2))
-        self.params["B2"] = np.zeros((1, 4))
+        self.params["W1"] = W1.copy()  # weight of layer 1
+        self.params["W2"] = W2.copy()  # weight of layer 2
+        self.params["B1"] = np.zeros((1, 2)) # bias of layer 1
+        self.params["B2"] = np.zeros((1, 4)) # bias of layer 2
         self.num_layers = 2
         self.gradients = {}
         self.update_params = {}
@@ -24,6 +24,7 @@ class NNetwork:
             self.prev_update_params["v_w" + str(i)] = 0
             self.prev_update_params["v_b" + str(i)] = 0
 
+    # Create feed forward function
     def forward_activation(self, X):
         return 1.0 / (1.0 + np.exp(-X))
 

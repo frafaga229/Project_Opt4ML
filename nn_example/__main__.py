@@ -10,6 +10,7 @@ from .visualize import visualize_nn
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.datasets import make_blobs
 
+
 # This function to read agruments from command line
 def parse_args():
     parser = argparse.ArgumentParser()

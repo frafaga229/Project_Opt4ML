@@ -1,7 +1,7 @@
 
 from .sigmoid_neuron import SN
 
-
+# Class NAG inherited from SN class
 class NAG(SN):
 
     def __init__(self, weight_init, bias_init):
