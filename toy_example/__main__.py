@@ -5,6 +5,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import argparse
 from .visualize import toy_example
 
+
 # This function to read agruments from command line
 def parse_args():
     parser = argparse.ArgumentParser()

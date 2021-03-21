@@ -2,6 +2,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 from matplotlib import cm
 
+
 from matplotlib import animation, rc
 # from IPython.display import HTML
 
@@ -10,6 +11,8 @@ from .momentum import Momentum
 from .nag import NAG
 
 # Cerate some constant values
+X = np.asarray([3.5, 0.35, 3.2, -2.0, 1.5, -0.5, -0.25])
+Y = np.asarray([0.5, 0.52, 0.56, 0.51, 0.12, 0.35, 0.75])
 w_init = -6
 b_init = 5
 w_min = -7
@@ -58,6 +61,7 @@ def visualize_3d(neuron_class1, neuron_class2, fig):
     ax1.legend(facecolor='white', frameon=True, prop={'size': 18})
     title = fig.suptitle('Epoch 0')
     return line11, line12, title
+
 
 # This function to update draw line on 3d graph
 def plot_animate_3d(j, neuron_class1, neuron_class2, line11, line12, title):
