@@ -29,7 +29,7 @@ python -m toy_example --epochs=100 --gamma=0.9 --eta=1
   **Parameters**
   -  ```epochs``` is parameters of Number of Epochs
   -  ```gamma``` is parameters of momentum values input (gammma) (from 0 - 1)
-  -  ```eta``` is parameters of Learning rate (Theta)
+  -  ```eta``` is parameters of Learning rate
 
   Plots includes:
   - **1** graph on parameters and error on Momentum method
